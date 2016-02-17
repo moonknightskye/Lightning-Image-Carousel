@@ -1,4 +1,4 @@
-<design:component label="Image Carousel">
+<design:component label="Lightning Image Carousel">
     <design:attribute name="image_1" label="Image #1 URL" default="http://img1.mxstatic.com/wallpapers/2537172757595ca889b9151d030dda1d_large.jpeg" description="Root-relative path to the first image for the carousel, such as '/customers/resource/12345/image1.jpg'"/>
     <design:attribute name="link_1" label="URL Link #1" default="http://www.defenders.org/frogs/basic-facts"  description="URL link associated with the image on image click."/>
     <design:attribute name="image_2" label="Image #2 URL" default="http://images6.alphacoders.com/343/343156.jpg"  description="Root-relative path to the second image for the carousel, such as '/customers/resource/12345/image2.jpg'"/>
