@@ -1,0 +1,25 @@
+<design:component label="Image Carousel">
+    <design:attribute name="image_1" label="Image #1 URL" default="http://img1.mxstatic.com/wallpapers/2537172757595ca889b9151d030dda1d_large.jpeg" description="Root-relative path to the first image for the carousel, such as '/customers/resource/12345/image1.jpg'"/>
+    <design:attribute name="link_1" label="URL Link #1" default="http://www.defenders.org/frogs/basic-facts"  description="URL link associated with the image on image click."/>
+    <design:attribute name="image_2" label="Image #2 URL" default="http://images6.alphacoders.com/343/343156.jpg"  description="Root-relative path to the second image for the carousel, such as '/customers/resource/12345/image2.jpg'"/>
+    <design:attribute name="link_2" label="URL Link #2" default="http://www.defenders.org/canada-lynx/basic-facts"  description="URL link associated with the image on image click."/>
+    <design:attribute name="image_3" label="Image #3 URL" default="http://www.mrwallpaper.com/wallpapers/Three-Dolphins.jpg"  description="Root-relative path to the third image for the carousel, such as '/customers/resource/12345/image3.jpg'"/>
+    <design:attribute name="link_3" label="URL Link #3" default="http://www.defenders.org/dolphin/basic-facts"  description="URL link associated with the image on image click."/>
+    <design:attribute name="image_4" label="Image #4 URL" default="" description="Root-relative path to the fourth image for the carousel, such as '/customers/resource/12345/image4.jpg'"/>
+    <design:attribute name="link_4" label="URL Link #4" default=""  description="URL link associated with the image on image click."/>
+    <design:attribute name="image_5" label="Image #5 URL" default="" description="Comma seperated root-relative path to the fifth image for the carousel, such as '/customers/resource/12345/image5.jpg'"/>
+    <design:attribute name="link_5" label="URL Link #5" default=""  description="URL link associated with the image on image click."/>
+    <design:attribute name="images" label="Other Images URL" default=""  description="Root-relative path to the 6th and above images for the carousel, such as '/customers/resource/12345/image6.jpg, /customers/resource/12345/image7.jpg'"/>
+    <design:attribute name="links" label="Other URL Links" default=" "  description="URL links separated by comma associated with every images to be directed on image click."/>
+    <design:attribute name="animationType" label="Transition Type" datasource="Slide, Fade, Blur" default="Slide" />
+    <design:attribute name="autoplay" label="Autoplay" />
+     <design:attribute name="isWallpaperMode" label="Wallpaper Mode" />
+	<design:attribute name="direction" label="Autoplay Direction" datasource="Left, Right" default="Left" />
+    <design:attribute name="autoplaytimeout" label="Autoplay Timeout (in secods)" default="5" />
+    <design:attribute name="fitMode" label="Fit image on the container" datasource="Both, Height, Width"  default="Both" description="(Will be ingnored on wallpaper mode)" />
+    <design:attribute name="hidecontrols" label="Hide Side Controls" description="(Will be ingnored on wallpaper mode)" />
+    <design:attribute name="backgroundcolor" label="Background Color (color name or HEX)" default="transparent" />
+    <design:attribute name="width" label="Width (% or px)" default="100%" description="(Will be ingnored on wallpaper mode)" />
+    <design:attribute name="height" label="Height (in pixels)." default="200px" description="(Will be ingnored on wallpaper mode)" />
+     <design:attribute name="effect" label="Image Filter" datasource="Off, Invert, Grayscale light, Grayscale strong, Sepia light, Sepia strong, Blur light, Blur strong" default="Off" />
+</design:component>

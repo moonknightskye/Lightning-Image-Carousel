@@ -1,0 +1,294 @@
+section.lightning-slideshow {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1em;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+section.lightning-slideshow ul.image-list {
+	list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0;
+}
+
+section.lightning-slideshow.desktop .link-enabled:hover:after{
+     background-color: rgba(255, 255, 255, 0.2);
+}
+section.lightning-slideshow.desktop .link-enabled:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+section.lightning-slideshow.desktop .left-button:hover {
+	opacity: 1;
+}
+section.lightning-slideshow.desktop .right-button:hover {
+	opacity: 1;
+}
+section.lightning-slideshow .controls {
+    display: flex;
+    z-index: 2;
+    position: absolute;
+	height: 100%;
+    width: 100%;
+}
+section.lightning-slideshow .left-button,
+section.lightning-slideshow .right-button {
+    height: 100%;
+    position: relative;
+    opacity: 0.5;
+    cursor: pointer;
+    min-width: 100px;
+    max-width: 100px;
+    z-index: 10;
+}
+section.lightning-slideshow .left-button .square {
+    -webkit-transform: rotate(45deg);
+    border-left: 8px solid;
+    border-bottom: 8px solid;
+}
+section.lightning-slideshow .right-button .square {
+    -webkit-transform: rotate(-45deg);
+    border-right: 8px solid;
+    border-bottom: 8px solid;
+}
+section.lightning-slideshow .image-button {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+section.lightning-slideshow .link-enabled .image-button{
+    cursor: pointer;
+}
+section.lightning-slideshow .square {
+    border-color: #888888 !important;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+}
+section.lightning-slideshow .absolute-center,
+section.lightning-slideshow .dots-holder,
+section.lightning-slideshow .square {
+    margin: auto;
+	position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+section.lightning-slideshow .slide-image {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+}
+
+section.lightning-slideshow .active {
+	opacity: 1;
+    left: 0%;
+}
+
+
+section.lightning-slideshow .dotnav {
+    display: block;
+	position: absolute;
+    left: 0;
+    bottom: 6px;
+    right: 0;
+    background: transparent;
+    height: 28px;
+    text-align: center;
+    z-index: 10;
+}
+section.lightning-slideshow .dotnav ul {
+	display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    height: 0px;
+}
+
+section.lightning-slideshow .dotnav li{
+	list-style: none;
+    margin: 0 10px;
+    width: 8px;
+    height: 8px;
+    float: left;
+    position: relative;
+}
+
+section.lightning-slideshow .dotnav a {
+    top: 0;
+    left: 0;
+    outline: none;
+    position: absolute;
+    border-radius: 50%;
+    background-color: silver;
+    font: 0/0 a;
+    color: transparent;
+    -webkit-transform: scale(0.5);
+     -webkit-animation: blowdown 1s ease forwards;
+}
+
+section.lightning-slideshow .dotnav a:hover:not(.active){
+    cursor: pointer;
+    color: black;
+    opacity: 0.5;
+}
+
+section.lightning-slideshow.desktop .dotnav a {
+    width: 16px;
+    height: 16px;
+}
+
+section.lightning-slideshow.mobile .dotnav a {
+    width: 32px;
+    height: 32px;
+}
+
+section.lightning-slideshow.mobile .dotnav li{
+    margin: 0 20px;
+}
+section.lightning-slideshow.mobile .dotnav{
+    bottom: 26px;
+}
+
+@-webkit-keyframes blowup {
+	0%{ -webkit-transform: scale(0.5); }
+    40%{ -webkit-transform: scale(1); }
+    100%{ -webkit-transform: scale(0.8);}
+}
+@-webkit-keyframes blowdown {
+	0%{ -webkit-transform: scale(0.8); background-color: gray; }
+    100%{ -webkit-transform: scale(0.5); background-color: silver; }
+}
+section.lightning-slideshow .dotnav a.active {
+    background-color: gray;
+    -webkit-animation: blowup 0.6s 0.4s ease forwards;
+}
+
+@-webkit-keyframes fadeout {
+	0%{ opacity: 1; }
+    100%{ opacity: 0;}
+}
+@-webkit-keyframes fadein {
+	0%{ opacity: 0; }
+    100%{ opacity: 1;}
+}
+
+section.lightning-slideshow .fadein {
+	opacity: 0;
+	-webkit-animation: fadein 1s ease forwards;
+}
+
+@-webkit-keyframes slideout-left  {
+	0%{ left: 0%; }
+    100%{ left: -100%;}
+}
+section.lightning-slideshow .slideout-left {
+	-webkit-animation: slideout-left 1s ease forwards;
+}
+@-webkit-keyframes slidein-left  {
+	0%{ left: 100%; }
+    100%{ left: 0%;}
+}
+section.lightning-slideshow .slidein-left {
+	-webkit-animation: slidein-left 1s ease forwards;
+}
+@-webkit-keyframes slideout-right  {
+	0%{ left: 0%; }
+    100%{ left: 100%;}
+}
+section.lightning-slideshow .slideout-right {
+	-webkit-animation: slideout-right 1s ease forwards;
+}
+@-webkit-keyframes slidein-right  {
+	0%{ left: -100%; }
+    100%{ left: 0%;}
+}
+section.lightning-slideshow .slidein-right  {
+	-webkit-animation: slidein-right  1s ease forwards;
+}
+
+section.lightning-slideshow .naviout,
+section.lightning-slideshow .fadeout-right,
+section.lightning-slideshow .fadeout-left {
+    left: 0%;
+	-webkit-animation: fadeout 1s ease forwards;
+}
+section.lightning-slideshow .naviin,
+section.lightning-slideshow .fadein-right,
+section.lightning-slideshow .fadein-left {
+    left: 0%;
+	-webkit-animation: fadein 1s ease forwards;
+}
+
+@-webkit-keyframes blurout-left  {
+	0%{ -webkit-filter: blur(0px); opacity: 1; }
+    50%{ opacity: 0; }
+    100%{ -webkit-filter: blur(6px); opacity: 0;}
+}
+section.lightning-slideshow .blurout-right,
+section.lightning-slideshow .blurout-left {
+    left: 0%;
+	-webkit-animation: blurout-left 1s ease forwards;
+}
+@-webkit-keyframes blurin-left  {
+	0%{ -webkit-filter: blur(6px); opacity: 0; }
+    50%{ opacity: 1; }
+    100%{ -webkit-filter: blur(0px); opacity: 1; }
+}
+section.lightning-slideshow .blurin-right,
+section.lightning-slideshow .blurin-left {
+    left: 0%;
+	-webkit-animation: blurin-left 1s ease forwards;
+}
+
+section.lightning-slideshow .gray_light {
+    filter: grayscale(0.5);
+    -webkit-filter: grayscale(0.5);
+}
+
+section.lightning-slideshow .gray_strong {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+}
+
+section.lightning-slideshow .sepia_light {
+    filter: sepia(0.5);
+    -webkit-filter: sepia(0.5);
+}
+
+section.lightning-slideshow .sepia_strong {
+    filter: sepia(1);
+    -webkit-filter: sepia(1);
+}
+
+section.lightning-slideshow .blur_light {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+section.lightning-slideshow .blur_strong {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+section.lightning-slideshow .invert {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+section.lightning-slideshow.full_screen{
+    position: absolute;
+    z-index: -999;
+}

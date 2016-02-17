@@ -1,0 +1,127 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+   
+    <ltng:require styles="/resource/imagecarouselresource/style.css?v=1" scripts="/resource/imagecarouselresource/logic.js?v=1, /resource/imagecarouselresource/utility.js?v=1" afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+	 <!--
+    <ltng:require styles="/resource/style?v=102" scripts="/resource/logic, /resource/utility" afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+   	-->
+    
+    <aura:attribute name="isWallpaperMode"
+           type="Boolean"
+           default="false"/>
+    <aura:attribute name="effect"
+								type="String"
+                    			default="default"/>
+    
+    <aura:attribute name="effect_class"
+								type="String"
+                    			default=""/>
+    <aura:attribute name="fullscreen_class"
+								type="String"
+                    			default=""/>
+     <aura:attribute name="fitMode"
+           type="String"
+           default="Both"/>
+    <aura:attribute name="autoplay"
+           type="Boolean"
+           default="true"/>
+    <aura:attribute name="hidecontrols"
+           type="Boolean"
+           default="false"/>
+    <aura:attribute name="autoplaytimeout"
+           type="Integer"
+           default="5"/>
+    <aura:attribute name="direction"
+           type="String"
+           default="Left"/>
+    <aura:attribute name="height"
+           type="String"
+           default="200px"/>
+    <aura:attribute name="width"
+           type="String"
+           default="100%"/>
+    <aura:attribute name="backgroundcolor"
+           type="String"
+           default="transparent"/>
+    <aura:attribute name="images"
+           type="String"
+           default=""/>
+    <aura:attribute name="animationType"
+                    type="String"
+                    default="Slide"/>
+    <aura:attribute name="onSwitch"
+                    type="String"
+                    default="[]"/>
+    <aura:attribute name="links"
+                    type="String"
+                    default=""/>
+    <aura:attribute name="id"
+                    type="String"
+                    default=""/>
+    
+    <aura:attribute name="image_1"
+           type="String"
+           default=""/>
+    <aura:attribute name="link_1"
+                    type="String"
+                    default=""/>
+    <aura:attribute name="image_2"
+           type="String"
+           default=""/>
+    <aura:attribute name="link_2"
+                    type="String"
+                    default=""/>
+    <aura:attribute name="image_3"
+           type="String"
+           default=""/>
+    <aura:attribute name="link_3"
+                    type="String"
+                    default=""/>
+    <aura:attribute name="image_4"
+           type="String"
+           default=""/>
+    <aura:attribute name="link_4"
+                    type="String"
+                    default=""/>
+    <aura:attribute name="image_5"
+           type="String"
+           default=""/>
+    <aura:attribute name="link_5"
+                    type="String"
+                    default=""/>
+    <aura:attribute name="image_list"
+           type="String[]"
+           default="[]"/>
+    <aura:attribute name="link_list"
+           type="String[]"
+           default="[]"/>
+
+    <section id="{! 'lightning-slideshow' + v.id}" class="{!'lightning-slideshow '+v.fullscreen_class}">
+        <ul class="{!'image-list ' + v.effect_class}">
+        </ul>
+        
+        <div class="controls">
+            <aura:if isTrue="{!v.hidecontrols != true}">
+                <div id="slide-left-button" class="left-button" >
+                    <div class="square"></div>
+                </div>
+                <div class="image-button">
+                    <nav class="dotnav">
+                        <ul class="dots"></ul>
+                    </nav>
+                </div>
+                <div id="right-left-button" class="right-button">
+                    <div class="square"></div>
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.hidecontrols == true}">
+                <div class="image-button">
+                	<nav class="dotnav">
+                        <ul class="dots"></ul>
+                    </nav>
+                </div>
+            </aura:if>
+        </div>
+    </section>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+</aura:component>
